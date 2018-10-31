@@ -5,6 +5,12 @@ import java.util.List;
 
 public class Boss implements Worker {
 
+    private String name;
+
+    public Boss(String name){
+        this.name = name;
+    }
+
     protected List<Worker> list= new ArrayList<>();
 
     public void addWorker(Worker worker) {
@@ -15,14 +21,14 @@ public class Boss implements Worker {
         list.remove(worker);
     }
 
-    void notifyWorkers(){
+    void notifyWorkers(Work youShallWork){
         for(Worker w : list)
-            w.doWork();
+            w.doWork(youShallWork);
     }
 
     @Override
-    public void doWork() {
-        System.out.println(getClass().getName() + " pracuje... ");
-        notifyWorkers();
+    public void doWork(Work youShallWork) {
+        System.out.println(name + " pracuje... ");
+        notifyWorkers(youShallWork);
     }
 }

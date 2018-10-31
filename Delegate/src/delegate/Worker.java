@@ -1,5 +1,5 @@
 package delegate;
 
 public interface Worker {
-    void doWork();
+    void doWork(Work youShallWork);
 }
