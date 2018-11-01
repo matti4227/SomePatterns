@@ -13,6 +13,7 @@ public class Main {
         Worker rob3 = new Robot("Robot Zdzisia Wiesia");
         Worker emp4 = new Employee("Kolega Zdzisia posiadający robota");
         Worker rob4 = new Robot("Robot będący robotem kolegi Zdzisia");
+
         ((Boss) boss).addWorker(emp1);
         ((Boss) boss).addWorker(rob1);
         ((Boss) boss).addWorker(emp2);
@@ -21,9 +22,10 @@ public class Main {
         ((Boss) boss).addWorker(emp3);
         ((Boss) boss).addWorker(emp4);
         ((Boss) boss).addWorker(rob4);
-        Work work1 = new Work_1();
+
+        Work work1 = Work_1.getInstance();
         ((Work_1) work1).setWork("Zrob to");
-        Work work2 = new Work_2();
+        Work work2 = Work_2.getInstance();
         ((Work_2) work2).setWork("Zrób tamto");
 
         ((Employee) emp1).setWork(work1);
